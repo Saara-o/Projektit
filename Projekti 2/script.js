@@ -1,13 +1,10 @@
-// Luodaan hakukenttä: lisätään täpät title, author ?
-
-// Poimitaan hakusana käyttäjän syöttestä
-let hakusana = document.getElementById("hakuInput").value;
-
-// Luodaan URL, jossa on käyttäjän syöte otettu huomioon
-let url = "https://openlibrary.org/search.json?q=" + encodeURIComponent(hakusana);
+const hakukentta = document.querySelector(".hakukentta");
+const hakusana = hakukentta.value.trim();
 
 // Luodaan AJAX-olio
-// function haeData () {
+function haeData (hakusana) {
+    // Luodaan URL, jossa on käyttäjän syöte otettu huomioon
+    let url = "https://openlibrary.org/search.json?q=" + encodeURIComponent(hakusana);
     let xhr = new XMLHttpRequest();
     // Kerrotaan mihin osoitteeseen tietopyyntö lähtee
     xhr.open("GET", url, true);
@@ -17,11 +14,54 @@ let url = "https://openlibrary.org/search.json?q=" + encodeURIComponent(hakusana
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Muutetaan vastaus JSON-muotoon
             let data = JSON.parse(xhr.responseText);
+            // Oma funktio käsittelee haetun datan
+            parsiData(data);
         }
     };
-// } function
+    // Lähetetään edellä muovattu AJAX-olio
+    xhr.send();
 
-xhr.send();
+    // Datan käsittelevä funktio
+    function parsiData(data) {
+        // Luodaan muuttuja kohon tulokset kootaan
+        let rivit;
 
-// Parsitaan data
+        // Luodaan silmukka joka käy läpi kaikki tulostusrivit
+        for (let i = 0; i < data.)
+         = `
+            <table>
+                <tr>
+                    <td>${data.title}</td>
+                    <td>${data.author_name}</td>
+                    <td>${data.first_publish_year}</td>
+                    <td>${data.language}</td>
+                    <td>${data.ebook_access}</td>
+                    <td>${data.lending_edition_s}</td>
+                <tr>
+            </table>
+            `;
+        console.log(taulukko); // käsitellään hakutulokset
+        document.querySelector("#").innerHTML = taulukko;
+    }
+}
 
+// Lisätään kuuntelija hakukenttään
+hakukentta.addEventListener("keypress", clickEnter);
+
+// Enter-näppäimen painalluksesta submit
+function clickEnter (e) {
+    const pituus = hakukentta.value.length;
+    // Tarkistetaan, että painettu Enter-näppäintä
+    if (e.key === "Enter") {
+        e.preventDefault(); // Estetään lomakkeen oletustoiminta
+
+        // Hakukentän tarkastus
+        if (pituus === 0) {
+        alert("Hakukenttä on tyhjä.")
+        hakukentta.disabled = true;
+        return;
+    }
+        // Jos kenttä ei ole tyhjä
+        haeData(hakukentta.value.trim());
+    }
+}

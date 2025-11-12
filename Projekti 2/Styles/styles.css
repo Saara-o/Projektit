@@ -83,22 +83,31 @@ form {
 }
 
 .kirjataulu {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    background-color: #6B8F71;
+    border-color: rgb(139, 131, 120);
+    border-radius: 30px;
+    width: 90%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    margin: 20px auto;
 }
 
-.kirjataulu th,
+.kirjataulu th {
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    font-size: large;
+}
+
 .kirjataulu td {
     padding: 10px;
     margin: 10px;
-    text-align: center;
-}
-
-.kirjataulu.tr {
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
+    padding-left: 20px;
+    margin-left: 20px;
+    text-align: left;
+    padding-bottom: 30px;
+    font-size: large;
 }
 
 footer {

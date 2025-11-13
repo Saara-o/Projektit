@@ -127,25 +127,15 @@ form {
 }
 
 .kirjataulu th {
-    padding: 35px;
-    margin: 35px;
+    padding: 45px;
     text-align: left;
     font-size: x-large;
     overflow-wrap: break-word;
-}
-
-.kirjataulu th:nth-child(2),
-.kirjataulu th:nth-child(3) {
-    text-align: center;
+    border-bottom: 1pt solid #345845;
 }
 
 .kirjataulu td {
-    padding: 10px;
-    margin: 10px;
-    padding-left: 35px;
-    margin-left: 35px;
-    padding-right: 35px;
-    margin-right: 35px;
+    padding: 45px;
     text-align: left;
     padding-bottom: 30px;
     font-size: large;
@@ -153,14 +143,13 @@ form {
     overflow-wrap: break-word;
 }
 
-.kirjataulu td:nth-child(2),
+.kirjataulu th:nth-child(3),
 .kirjataulu td:nth-child(3) {
     text-align: center;
 }
 
 footer {
     margin-top: 40px;
-
     position: sticky;
     bottom: 0;
 }
@@ -169,6 +158,7 @@ footer {
     body {
         font-size: medium;
         padding: 10px;
+        text-align: center;
     }
 
     #logo img {
@@ -197,7 +187,6 @@ footer {
     }
 
     .hakuwrapper {
-
         max-width: 90%;
     }
 
@@ -209,20 +198,36 @@ footer {
     .kirjataulu {
         width: 100%;
         font-size: medium;
-        overflow-x: auto;
-        display: block;
     }
 
     .kirjataulu th,
     .kirjataulu td {
         font-size: medium;
     }
+
+    .kirjataulu th {
+        padding: 25px;;
+        text-align: left;
+    }
+
+    .kirjataulu td {
+        padding: 15px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .kirjataulu td:nth-child(2),
+    .kirjataulu td:nth-child(3) {
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
     body {
         font-size: medium;
         padding: 10px;
+        text-align: center;
     }
 
     #logo img {
@@ -263,13 +268,30 @@ footer {
     }
     .kirjataulu {
         width: 100%;
-        font-size: medium;
-        overflow-x: auto;
-        display: block;
     }
 
     .kirjataulu th,
     .kirjataulu td {
         font-size: medium;
+    }
+
+    .kirjataulu th {
+        padding: 18px;
+        text-align: left;
+    }
+
+    .kirjataulu td {
+        padding: 15px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .kirjataulu td:nth-child(2),
+    .kirjataulu td:nth-child(3) {
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 10px;
     }
 }

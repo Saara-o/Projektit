@@ -26,7 +26,7 @@ hakukentta.addEventListener("keypress", clickEnter);
 
 // Enter-näppäimen painalluksesta submit
 function clickEnter (e) {
-    // Tarkistetaan, että painettu Enter-näppäintä
+    // Tarkistetaan, että on painettu Enter-näppäintä
     if (e.key === "Enter") {
         e.preventDefault(); // Estetään lomakkeen oletustoiminta
         const pituus = hakukentta.value.length;
@@ -45,7 +45,7 @@ function clickEnter (e) {
 
 // Luodaan AJAX-olio
 function haeData (hakusana) {
-    // Luodaan URL, jossa on käyttäjän syöte otettu huomioon (title)
+    // Luodaan URL, jossa on käyttäjän syöte otettu huomioon (title tai author)
     let url = "https://openlibrary.org/search.json?" + hakutyyppi + "=" + encodeURIComponent(hakusana);
     let xhr = new XMLHttpRequest();
     // Kerrotaan mihin osoitteeseen tietopyyntö lähtee

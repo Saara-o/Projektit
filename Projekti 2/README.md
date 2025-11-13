@@ -8,7 +8,9 @@ Linkki julkaistuun APIin:
 
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
+Sovelluksen luominen oli hauskaa, muuta olen myös kokenut sovelluksen tekemisen ajoittain haasteelliseksi ja joutunut kaventamaan sovelluksen toteuttamisen suunnitelmia, esim. olin ajatellut alussa enemmän toiminnallisuutta ja sisältöä sovellukseen, kuten kategoriat-osion, jossa olisi voinut tehdä kirjahaun genren mukaan, ja asetukset-osion, jossa käyttäjä olisi itse voinut valita esim. dark/light moden ja fontin/fonttikoon, mutta minulla meni kauemmin aikaa AJAX-olion kanssa ja sen kanssa, että sain hakusanalla tehtyä API-haun. MYös taulukon luominen aiheutti päänvaivaa.
 
+Minusta tuntuu, että tämän sovelluksen luomisen aikana oma osaaminen on kasvanut huomattavasti: AJAX ja API -kutsujen laatiminen, painikkeiden tilan päivitys ja liittäminen API-hakuun sekä erilaisten virheilmoituksien käsittely. Sovelluksen luomisen yhteydessä olen myös päässyt palauttelemaan aikaisemmin opittuja HTML, CSS ja Bootstrap sekä niiden käyttöä. Antaisin arvosanan itselleni 3, sillä jouduin monesti käyttämään tekoälyä hyödyksi, kun en saanut koodia toimimaan haluamallani tavalla.
 
 ## Sisällysluettelo
 
@@ -20,14 +22,19 @@ Linkki julkaistuun APIin:
 - [Lisenssi](#lisenssi)
 
 ## Tietoja sovelluksesta
-KirjaLähde on selainpohjainen hakusovellus, jonka avulla käyttäjä voi etsiä kirjoja Open Libraryn julkisesta rajapinnasta. Sovellus tarjoaa yksinkertaisen ja responsiivisen käyttöliittymän, jossa käyttäjä voi syöttää hakusanan (kirjan nimi) ja saada tuloksena listan kirjoista mukaan lukien kirjan nimen, tekijän, julkaisuvuoden ja kielitiedot.
+KirjaLähde on selainpohjainen hakusovellus, jonka avulla käyttäjä voi etsiä kirjoja Open Libraryn julkisesta rajapinnasta. Sovellus tarjoaa yksinkertaisen ja responsiivisen käyttöliittymän, jossa käyttäjä voi syöttää hakusanan (kirjan nimi tai kirjailijan nimi) ja saada hakutuloksista lista, jossa on teoksen nimi, tekijän nimi, teoksen julkaisuvuosi sekä millä kielillä teos on saatavilla.
 
 Sovelluksen logo on luotu Microsoft Copilotin avulla.
 
 ## Kuvakaappaus
-Sovelluksen ulkoasu hakutuloksien kanssa:
+Sovelluksen ulkoasu:
 
 ![Etusivu](./Kuvat/kuvakaappausKirjaLähde.png)
+
+
+Sovelluksen ulkoasu hakutuloksien kanssa:
+
+![Etusivu](./Kuvat/kuvakaappausTuloksetKirjaLähde.png)
 
 
 ## Teknologiat
@@ -64,4 +71,4 @@ Projektin toteutuksessa hyödynnettiin seuraavia lähteitä:
 Projektin toteutuksessa on hyödynnetty Microsoft Copilotia koodin suunnittelussa ja virheiden korjauksessa, esim. taulukon luomisessa, sekä responsiivisen käyttöliittymän suunnittelussa. 
 
 ## Lisenssi
-MIT lisenssi @ Saara-o
+MIT lisenssi @ Saara Orvas

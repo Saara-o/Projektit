@@ -1,5 +1,26 @@
 const hakukentta = document.querySelector(".hakukentta");
 
+// Oletuksena haetaan kirjan nimen mukaan
+let hakutyyppi = "title";
+
+// Lisätään toiminnallisuus painikkeisiin
+function setHakutyyppi(tyyppi) {
+    hakutyyppi = tyyppi;
+
+    // Poistetaan active-luokka hakutyyppi-painikkeilta
+    let buttons = document.querySelectorAll(".hakutyyppiBtn");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    // Lisätään active-luokka valituun painikkeeseen
+    let button = document.getElementById(tyyppi + "Btn");
+    if (button) {
+        button.classList.add("active");
+    }
+}
+
+
 // Lisätään kuuntelija hakukenttään
 hakukentta.addEventListener("keypress", clickEnter);
 
@@ -25,18 +46,33 @@ function clickEnter (e) {
 // Luodaan AJAX-olio
 function haeData (hakusana) {
     // Luodaan URL, jossa on käyttäjän syöte otettu huomioon (title)
-    let url = "https://openlibrary.org/search.json?title=" + encodeURIComponent(hakusana);
+    let url = "https://openlibrary.org/search.json?" + hakutyyppi + "=" + encodeURIComponent(hakusana);
     let xhr = new XMLHttpRequest();
     // Kerrotaan mihin osoitteeseen tietopyyntö lähtee
     xhr.open("GET", url, true);
     //Määritellään käsittelijä vastauksen saapuessa
     xhr.onreadystatechange = function () {
-        // jos ei ole tullut virheitä matkalla
+        // Jos ei ole tullut virheitä matkalla
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Muutetaan vastaus JSON-muotoon
             let data = JSON.parse(xhr.responseText);
+            // Tarkistetaan löytyikö yhtään tulosta
+            if (data.docs.length === 0) {
+                document.getElementById("tulokset").innerText =
+                "Hakusanalla ei löytynyt yhtään kirjaa. Kokeile toista hakusanaa."
+                return;
+            }
             // Oma funktio käsittelee haetun datan
             parsiData(data);
+        } 
+        // Mikäli on tullut virheitä
+        else if (xhr.status === 403) {
+            document.getElementById("tulokset").innerText =
+            "Haussa tapahtui virhe: palvelin esti haun (403). Tarkista hakutyyppi tai kokeile myöhemmin uudelleen.";
+        }
+        else if (xhr.status === 404) {
+            document.getElementById("tulokset").innerText =
+            "Haussa tapahtui virhe: kirjaa ei löytynyt (404). Kokeile toista hakusanaa.";
         }
     };
     // Lähetetään edellä muovattu AJAX-olio
@@ -44,7 +80,7 @@ function haeData (hakusana) {
 }
 // Datan käsittelevä funktio
 function parsiData(data) {
-    // Luodaan muuttuja kohon tulokset kootaan
+    // Luodaan muuttuja, johon tulokset kootaan
     let rivit = "";
 
     // Luodaan silmukka joka käy läpi kaikki tulostusrivit

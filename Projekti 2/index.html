@@ -11,28 +11,40 @@
 </head>
 
 <body>
-     <!--lisätty logo, navigointi ja hakukenttä-->
+     <!-- Lisätty logo, navigointi ja hakukenttä -->
     <div id = "logo" class = "page-header mb-0">
         <img src="Kuvat/KirjaLähdeLogo.png" alt="logo">
     </div>
    
     <div>
-        <h1>Etusivu</h1>
+        <h1>Etsi kirjoja kirjan tai kirjoittajan perusteella</h1>
     </div>
     
-    <div id = "navi">
-        <ul class = "nav flex-column"></ul>
-            <div class = "nav-button haku-button">
+    <div class="container-fluid" id = "navi">
+        <div class="row justify-content-center">
+            <!-- Lisätty hakuvalinta: teoksen nimi-painike tai tekijä-painike-->
+            <div class = "btn-group justify-content-center" role="group" aria-label="Hakutyyppi" id = "hakuValinta">
+                <div class = "col-sm-2" id="titlewrapper">
+                    <button id="titleBtn" type="button" class="hakutyyppiBtn active" onclick = "setHakutyyppi('title')">Teoksen nimi</button>
+                </div>
+                <div class = "col-sm-2" id="authorwrapper">
+                    <button id="authorBtn" type="button" class="hakutyyppiBtn" onclick = "setHakutyyppi('author')">Tekijä</button>
+                </div>
+            </div>
+            <!-- Hakukenttä, kenttä tyhjenee, kun hiirellä klikkaa kenttää-->
+            <div class = "col-sm-7" id = "haku-button">
                 <p id="hakuotsikko">Haku</p>
                 <form action="submit">
                     <div class = "hakuwrapper">
-                        <span class = "search-icon material-symbols-outlined">search</span>
-                        <input class = hakukentta type = "search" onfocus = "this.value = ''" placeholder = " Hae kirjoja..." name = "etsi">
+                        <button onclick = "clickIcon()" class = "search-icon material-symbols-outlined" id="dropBtn">search</button>
+                        <input class = "hakukentta" type = "search" onfocus = "this.value = ''" placeholder = " Hae kirjoja..." name = "etsi">
                     </div>
                 </form>
             </div>
+        </div>
     </div>
-    
+
+    <!-- Tähän sijoiteaan API-haun tulokset -->
     <div id = "tulokset"></div>
 
     <div>
@@ -40,7 +52,7 @@
             <p>© 2025 KirjaLähde - Tekijä: Saara Orvas</p>
         </footer>
     </div>
-    
+    <!-- Oma koodi -->
     <script src = "script.js"></script>
 
 </body>

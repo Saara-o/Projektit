@@ -2,15 +2,8 @@
 Tekijä: Saara Orvas
 
 ## Verkkolinkit:
-Linkki videoesittelyyn: 
 
 Linkki julkaistuun APIin: [KirjaLähde](https://kirjalahde-api.netlify.app/)
-
-
-## Oma arvio työstä ja oman osaamisen kehittymisestä
-Sovelluksen luominen oli hauskaa, muuta olen myös kokenut sovelluksen tekemisen ajoittain haasteelliseksi ja joutunut kaventamaan sovelluksen toteuttamisen suunnitelmia, esim. olin ajatellut alussa enemmän toiminnallisuutta ja sisältöä sovellukseen, kuten kategoriat-osion, jossa olisi voinut tehdä kirjahaun genren mukaan, ja asetukset-osion, jossa käyttäjä olisi itse voinut valita esim. dark/light moden ja fontin/fonttikoon, mutta minulla meni kauemmin aikaa AJAX-olion kanssa ja sen kanssa, että sain hakusanalla tehtyä API-haun. MYös taulukon luominen aiheutti päänvaivaa.
-
-Minusta tuntuu, että tämän sovelluksen luomisen aikana oma osaaminen on kasvanut huomattavasti: AJAX ja API -kutsujen laatiminen, painikkeiden tilan päivitys ja liittäminen API-hakuun sekä erilaisten virheilmoituksien käsittely. Sovelluksen luomisen yhteydessä olen myös päässyt palauttelemaan aikaisemmin opittuja HTML, CSS ja Bootstrap sekä niiden käyttöä. Antaisin arvosanan itselleni 3, sillä jouduin monesti käyttämään tekoälyä hyödyksi, kun en saanut koodia toimimaan haluamallani tavalla.
 
 ## Sisällysluettelo
 
